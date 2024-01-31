@@ -23,7 +23,7 @@ public class PriceController {
     private final PriceService priceService;
 
     @GetMapping("/{productId}/prices")
-    public ResponseEntity<?> getPrice(@PathVariable @NotNull Integer productId,
+    public ResponseEntity<PriceResponse> getPrice(@PathVariable @NotNull Integer productId,
                                        @RequestParam @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME) @NotNull LocalDateTime date,
                                        @RequestParam @NotNull Integer brandId) {
 

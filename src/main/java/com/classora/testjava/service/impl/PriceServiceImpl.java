@@ -2,7 +2,7 @@ package com.classora.testjava.service.impl;
 
 import com.classora.testjava.dto.PriceResponse;
 import com.classora.testjava.mapper.PricesMapper;
-import com.classora.testjava.model.Price;
+import com.classora.testjava.model.Prices;
 import com.classora.testjava.repository.PriceRepository;
 import com.classora.testjava.service.PriceService;
 import lombok.RequiredArgsConstructor;
@@ -17,7 +17,7 @@ public class PriceServiceImpl implements PriceService {
     private final PricesMapper mapper;
     @Override
     public PriceResponse getPrice(Integer productId, Integer brandId, LocalDateTime date) {
-        Price price = repository.findApplicablePrices(date, productId, brandId)
+        Prices price = repository.findApplicablePrices(date, productId, brandId)
                 .stream()
                 .findFirst()
                 .orElse(null);

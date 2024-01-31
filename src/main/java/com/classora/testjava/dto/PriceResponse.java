@@ -1,5 +1,6 @@
 package com.classora.testjava.dto;
 
+import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
 public record PriceResponse(
@@ -7,6 +8,7 @@ public record PriceResponse(
         Integer brandId,
         Integer priceList,
         LocalDateTime startDate,
-        LocalDateTime endDate
+        LocalDateTime endDate,
+        BigDecimal price
 ) { }
 
